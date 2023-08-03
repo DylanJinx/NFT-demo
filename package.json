@@ -3,11 +3,22 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "test": "npx hardhat test"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "axios": "^1.4.0",
+    "ipfs-http-client": "^60.0.1",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-notifications": "^1.7.4"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "hardhat": "^2.14.0"
   }
 }

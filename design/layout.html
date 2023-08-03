@@ -1,0 +1,308 @@
+<html>
+
+<head>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --clr-primary: #651fff;
+            --clr-gray: #37474f;
+            --clr-gray-light: #b0becf;
+            --clr-gray100: #f0f7f8;
+            --clr-gray200: #cfd8d7;
+            --radius: 0.2rem;
+
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: var(--clr-gray);
+        }
+
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.3fr 2.2fr 0.2fr;
+            grid-template-areas:
+                "topnav"
+                "main"
+                "footer";
+            grid-gap: 0.1rem;
+            text-align: center;
+            overflow-wrap: break-word;
+        }
+
+        .main {
+
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            grid-gap: 2rem;
+            margin: 2rem;
+
+
+        }
+
+        .topnav {
+            display: block;
+            background-color: white;
+            box-shadow: 0px 0px 10px var(--clr-gray200);
+            margin: 0;
+            padding: 1rem 0;
+            border-radius: var(--radius);
+            grid-area: topnav;
+        }
+
+        .topnav :last-child {
+            float: right;
+        }
+
+        .btn-primary {
+            font-size: 1rem;
+            background: var(--clr-gray200);
+            border: none;
+            outline: none;
+            border-radius: var(--radius);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+
+        .btn-primary:hover {
+            background: var(--clr-primary);
+
+        }
+
+
+
+        #footer {
+            background: #99b20d;
+            grid-area: footer;
+        }
+
+
+        .topnav a {
+            float: left;
+            display: block;
+
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            list-style: none;
+            margin-right: 2rem;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .main {
+
+                grid-template-columns: 1fr;
+
+
+
+            }
+
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        .btn-primary {
+            font-size: 1rem;
+            background: var(--clr-gray100);
+            border: none;
+            outline: none;
+            border-radius: var(--radius);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+
+        .btn-primary:hover {
+            background: var(--clr-gray200);
+
+        }
+
+        .nftcard {
+
+            box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+            text-align: center;
+            border-radius: 0.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nft-image {
+            width: 100%;
+            padding: 2px;
+            border-radius: 0.4rem;
+            position: relative;
+        }
+
+
+        .price {
+            display: flex;
+            align-items: center;
+            color: hsl(178, 100%, 50%);
+            font-size: 14px;
+        }
+
+        .name {
+            font-size: 1.2rem;
+        }
+
+        .desc {
+            margin: 0.5rem 0.5rem;
+            font-size: 0.9rem;
+            overflow: clip;
+            height: 2rem;
+        }
+
+        .btn {
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--clr-primary);
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                ...
+            </a>
+            <a href="javascript:void(0);">
+                connect
+            </a>
+        </div>
+
+        <div class="main">
+            <div class="nftcard">
+                <img src="cat.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">
+                    cccccccccccccccccccccccccccccggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+                </div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+            <div class="nftcard">
+                <img src="https://angelo-sigo.github.io/nft-card-preview/images/image-equilibrium.jpg"
+                    class="nft-image" />
+                <div class="name">name</div>
+                <div class="desc">ccccccccccccccccccccccccccccc</div>
+                <div class="price">price</div>
+                <button class="btn">buy</button>
+            </div>
+        </div>
+
+        <div id="footer"></div>
+
+    </div>
+</body>
+
+</html>
